@@ -28,7 +28,13 @@
    <script src="http://code.jquery.com/jquery.js"></script>
    <script src="js/bootstrap.min.js"></script>
    	<div class="container">
-   	<c:out value="나의 등급은 : ${userList.Access }"></c:out>
+   	<c:out value="나의 등급은 : ${login.id }"></c:out>
+				<c:forEach var="balance" items="${userList}" varStatus="status">
+					<tr>
+						<td>${balance.access}</td>
+					</tr>
+				</c:forEach>
+				
 	<ul class="thumbnails">
 		<li class="span3"><a href="#" class="thumbnail"> 
 		<p>무료</p>

@@ -76,14 +76,17 @@ body {
    <script src="js/bootstrap.min.js"></script>
    
    	<div class="container">
-
-			<form method="post" action="/movie/main.do">
-		아이디 : <input type="text" class="contents"  name="id" value="">
-		<br>
-		비밀번호 : <input type="text" class="contents"  name="pwd" value="">
-		<br>
-		<input type="submit" name="login" class="btn" value="확인">
-	</form>
+	<form class="form-horizontal" method="post" action="/movie/main.do">
+			<div class="control-group">
+				<input type="text" class="contents"  name="id" value="" placeholder="아이디를 입력하세요">
+			</div>
+			<div class="control-group">
+				<input type="text" class="contents"  name="pwd" value="" placeholder="비밀번호를 입력하세요">
+			</div>
+			<div class="control-group-button">
+				<button type="submit" class="btn">Sign in</button>
+			</div>
+		</form>
 	</div>
 
 
