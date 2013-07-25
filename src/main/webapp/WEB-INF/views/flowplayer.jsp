@@ -19,6 +19,7 @@
 		   alert("finish");
 	   });
 	   
+	   
    }); 
    
    </script>
@@ -39,11 +40,16 @@
 		</li>
 	</ul>
 				
-	
-	<div class="flowplayer" data-swf="player/flowplayer.swf" >
+	<div id="01" class="flowplayer" data-swf="player/flowplayer.swf" >
 		<video>
 			<source type="video/mp4" src="${movie}">
 		</video>
+	</div>
+	<div id="02" class="flowplayer" data-swf="player/flowplayer.swf" >
+		<!-- 
+		<embed src="main.swf" width="550" height="400" wmode="transparent" />
+		 -->
+		<embed src="${swfSrc}"/>
 	</div>
 
 </body>
