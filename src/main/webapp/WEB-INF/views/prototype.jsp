@@ -28,6 +28,7 @@
    <script src="http://code.jquery.com/jquery.js"></script>
    <script src="js/bootstrap.min.js"></script>
    	<div class="container">
+   	<c:out value="나의 등급은 : ${userList.Access }"></c:out>
 	<ul class="thumbnails">
 		<li class="span3"><a href="#" class="thumbnail"> 
 		<p>무료</p>

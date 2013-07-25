@@ -1,25 +1,38 @@
 package com.bsg.pt.service;
 
-import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.bsg.pt.dao.LoginDao;
+import com.bsg.pt.dto.LoginDTO;
 
 @Service
 public class LoginService {
-	@RequestMapping(value = "index.do", method = RequestMethod.GET)
-	public ModelAndView index() {
-		return new ModelAndView("index");
+	
+	Logger logger = LoggerFactory.getLogger(getClass());
+	
+	@Autowired
+	private LoginDao loginDao;
+	
+	public boolean login(LoginDTO loginDTO) {
+		
+		//JSP에서 파라미터가 잘 넘어 왔는지 확인해 봅시다.
+		logger.info(loginDTO.toString());
+		
+		String id = loginDTO.getId();
+		String pwd = loginDTO.getPwd();
+		if(id.equals("test1") && pwd.equals("1234")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
-	@RequestMapping(value = "login.do", method = RequestMethod.GET)
-	public ModelAndView login(@RequestParam("ID") String ID, @RequestParam("password") String password) {
-		
-		
-		
-		
-		return new ModelAndView("index");
+	public List<LoginDTO> getUserList() {
+		return loginDao.getUserList();
 	}
 }
