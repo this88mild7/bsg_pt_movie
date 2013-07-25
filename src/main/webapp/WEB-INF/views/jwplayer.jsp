@@ -4,24 +4,21 @@
 <!doctype html>
 
 <head>
-
-
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-   <script type="text/javascript" src="js/jwplayer/jwplayer.js"></script>
+	<%@ include file="commonLib.jsp" %>  	
    
    <script type="text/javascript">
-    $(function(){
+	var player;
+	$(function(){
     	
-    	var movieSrc = "${movie}";
-	   
-		var player = jwplayer("myElement").setup({
-	    		flashplayer: "player/jwplayer.swf",
+		var movieSrc = "${movie}";
+	  
+		player = jwplayer("myElement").setup({
+		   		flashplayer: "player/jwplayer.swf",
 		        file: movieSrc,
-		        height: 480,
-		        width: 600
+		        width: 1027,
+		        height: 768
 		    });
-		
+	
 		player.onComplete(function(){
 			alert("finish");
 		});
@@ -32,8 +29,21 @@
 
 </head>
 
+
+
 <body >
+	<ul class="nav nav-tabs">
+		<li >
+			<a href="${contextPath}/flowplayer.do">flow-player</a>
+		</li>
+		<li class="active">
+			<a href="${contextPath}/jwplayer.do">jw-palyer</a>
+		</li>
+		<li  class="disabled">
+			<a href="#">vimeo</a>
+		</li>
+	</ul>
 	
-		<div align="center"  id="myElement">Loading the player...</div>
+	<div id="myElement" >Loading the player...</div>
 
 </body>

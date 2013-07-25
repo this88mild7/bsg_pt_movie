@@ -1,21 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!doctype html>
 
 <head>
 
-   <!-- player skin -->
-   <link rel="stylesheet" type="text/css" href="js/flowplayer/skin/minimalist.css">
-
-   <!-- site specific styling -->
-   <style type="text/css">
-   body { font: 12px "Myriad Pro", "Lucida Grande", sans-serif; text-align: center; padding-top: 5%; }
-   .flowplayer { width: 80%; }
-   </style>
-
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-   <!-- include flowplayer -->
-   <script type="text/javascript" src="js/flowplayer/flowplayer.min.js"></script>
+	<%@ include file="commonLib.jsp" %>
+	<style type="text/css">
+		.flowplayer { width: 1027; height:768; }
+	</style>
    
    <script type="text/javascript">
     $(function(){
@@ -33,11 +26,24 @@
 </head>
 
 <body>
+
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#">flow-player</a>
+		</li>
+		<li>
+			<a href="${contextPath}/jwplayer.do">jw-palyer</a>
+		</li>
+		<li  class="disabled">
+			<a href="#">vimeo</a>
+		</li>
+	</ul>
+				
 	
-   <div class="flowplayer" data-swf="player/flowplayer.swf" data-ratio="0.4167">
-      <video>
-         <source type="video/mp4" src="${movie}">
-      </video>
-   </div>
+	<div class="flowplayer" data-swf="player/flowplayer.swf" >
+		<video>
+			<source type="video/mp4" src="${movie}">
+		</video>
+	</div>
 
 </body>
