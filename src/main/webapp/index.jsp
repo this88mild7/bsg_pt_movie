@@ -44,12 +44,12 @@ body {
    <script src="js/bootstrap.min.js"></script>
    
    	<div class="container">
-		<form class="form-horizontal" method="POST" action="login.do">
+	<form class="form-horizontal" method="post" action="/movie/main.do">
 			<div class="control-group">
-				<input type="text" id="inputID" placeholder="ID">
+				<input type="text" class="contents"  name="id" value="" placeholder="아이디를 입력하세요">
 			</div>
 			<div class="control-group">
-				<input type="password" id="inputPassword" placeholder="Password">
+				<input type="text" class="contents"  name="pwd" value="" placeholder="비밀번호를 입력하세요">
 			</div>
 			<div class="control-group-button">
 				<button type="submit" class="btn">Sign in</button>

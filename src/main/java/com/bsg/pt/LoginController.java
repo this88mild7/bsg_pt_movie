@@ -1,16 +1,15 @@
 package com.bsg.pt;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.bsg.pt.dto.LoginDTO;
+import com.bsg.pt.service.LoginService;
 
 /**
  * Handles requests for the application home page.
@@ -19,7 +18,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	
+	@Autowired
+	private LoginService loginService;
+	//LoginService loginService = new LoginService();
 
+	@RequestMapping(value = "index.do", method = RequestMethod.GET)
+	public ModelAndView index() {
+		return new ModelAndView("index");
+	}
+	
+	@RequestMapping(value = "/main.do", method = RequestMethod.POST)
+	public ModelAndView login(LoginDTO loginDTO) throws ClassNotFoundException {
+		ModelAndView mav = new ModelAndView();
+		
+		boolean loginResult = loginService.login(loginDTO);
+		
+		if(loginResult) {
+			mav.addObject("userList", loginService.getUserList());
+			mav.setViewName("prototype");
+		} else {
+			//loginResult 가 1이 아니라면 
+			mav.setViewName("error");
+		}
+		
+		return mav;
+	}
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
