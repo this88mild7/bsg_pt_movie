@@ -14,7 +14,10 @@
 	</header>
 
 	<div class="container-fluid contents">
-		<tiles:insertAttribute name="content" />
+		<div class="row-fluid">
+			<div class="span2"><tiles:insertAttribute name="sidebar" /></div>
+			<div class="span10"><tiles:insertAttribute name="content" /></div>
+		</div>
 	</div>
 
 	<footer>

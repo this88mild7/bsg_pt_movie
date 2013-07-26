@@ -5,9 +5,15 @@
 
 <tiles-definitions>
     
+    <definition name="main" extends=".default-with-sidebar">
+        <put-attribute name="sidebar" value="/WEB-INF/views/includes/sidebar.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/main.jsp" />
+    </definition>
+    
     <definition name="flowplayer" extends=".default">
         <put-attribute name="content" value="/WEB-INF/views/flowplayer.jsp" />
     </definition>
+    
     <definition name="jwplayer" extends=".default">
         <put-attribute name="content" value="/WEB-INF/views/jwplayer.jsp" />
     </definition>

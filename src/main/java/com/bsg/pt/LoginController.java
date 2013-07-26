@@ -28,19 +28,19 @@ public class LoginController {
 		return new ModelAndView("index");
 	}
 	
-	@RequestMapping(value = "/main.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/main.do")
 	public ModelAndView login(LoginDTO loginDTO) throws ClassNotFoundException {
 		ModelAndView mav = new ModelAndView();
-		
-		boolean loginResult = loginService.login(loginDTO);
-		
-		if(loginResult) {
-			mav.addObject("userList", loginService.getUserList());
-			mav.setViewName("prototype");
-		} else {
-			//loginResult 가 1이 아니라면 
-			mav.setViewName("error");
-		}
+		mav.setViewName("main");
+//		boolean loginResult = loginService.login(loginDTO);
+//		
+//		if(loginResult) {
+//			mav.addObject("userList", loginService.getUserList());
+//			mav.setViewName("main");
+//		} else {
+//			//loginResult 가 1이 아니라면 
+//			mav.setViewName("error");
+//		}
 		
 		return mav;
 	}

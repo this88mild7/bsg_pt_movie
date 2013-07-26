@@ -1,5 +1,22 @@
 @CHARSET "EUC-KR";
 
+/* COMMON */
 body {
-	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	margin-top: 60px;
+}
+/* HEADER */
+header {
+}
+/* FOOTER */
+footer {
+	padding: 20px 0;
+	background: #27709b;
+	color: white;
+	height: 170px;
+}
+/* CONTENTS */
+.contents {
+	min-height: 700px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
