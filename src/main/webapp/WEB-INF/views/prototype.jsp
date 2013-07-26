@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" pageEncoding="utf-8" %>
+<%@ page session="true" pageEncoding="utf-8" %>
 <!doctype html>
 <head>
 
@@ -28,12 +28,9 @@
    <script src="http://code.jquery.com/jquery.js"></script>
    <script src="js/bootstrap.min.js"></script>
    	<div class="container">
-   	<c:out value="나의 등급은 : ${login.id }"></c:out>
-				<c:forEach var="balance" items="${userList}" varStatus="status">
-					<tr>
-						<td>${balance.access}</td>
-					</tr>
-				</c:forEach>
+   	<p>ID : ${user.id} 입니다</p>
+   	<p>ID : ${user.name} 입니다</p>
+   	<p>ID : ${user.access} 입니다</p>
 				
 	<ul class="thumbnails">
 		<li class="span3"><a href="#" class="thumbnail"> 

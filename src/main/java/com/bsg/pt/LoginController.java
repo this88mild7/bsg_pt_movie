@@ -1,5 +1,12 @@
 package com.bsg.pt;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +36,24 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/main.do", method = RequestMethod.POST)
-	public ModelAndView login(LoginDTO loginDTO) throws ClassNotFoundException {
+	public ModelAndView login(LoginDTO loginDTO, HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException {
 		ModelAndView mav = new ModelAndView();
 		
 		boolean loginResult = loginService.login(loginDTO);
 		
+		HttpSession session = request.getSession();
+
+		
+        
+        
 		if(loginResult) {
+			;
+			
+			session.setAttribute("user", loginService.getUser(loginDTO));
+			logger.info("Session : " + session.getAttribute("user1")); 
+			
 			mav.addObject("userList", loginService.getUserList());
+			
 			mav.setViewName("prototype");
 		} else {
 			//loginResult 가 1이 아니라면 

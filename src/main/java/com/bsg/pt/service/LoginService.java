@@ -27,11 +27,17 @@ public class LoginService {
 		
 		String id = loginDTO.getId();
 		String pwd = loginDTO.getPwd();
+
 		if(id.equals("test1") && pwd.equals("1234")) {
+			
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	public LoginDTO getUser(LoginDTO loginDTO) {
+		return loginDao.getUser(loginDTO);
 	}
 	
 	public List<LoginDTO> getUserList() {
