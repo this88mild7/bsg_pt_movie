@@ -2,38 +2,74 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div class="row-fluid">
-	<div class="span12 hero-unit">
-		<h1>메인</h1>
-		<p>Tagline</p>
-		<p>
-			<a class="btn btn-primary btn-large"> Learn more </a>
-		</p>
-	</div>
+<style>
+.carousel-inner img {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-inner {
+	height: 500px;
+}
+</style>
+
+<div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="${contextPath}/img/olleh.jpg" alt="">
+      <div class="carousel-caption">
+       1
+      </div>
+    </div>
+    <div class="item">
+      <img src="${contextPath}/img/emptyGray.png" alt="">
+      <div class="carousel-caption">
+       2
+      </div>
+    </div>
+    <div class="item">
+      <img src="${contextPath}/img/slam.gif" alt="">
+      <div class="carousel-caption">
+       3
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
 </div>
 
-<div class="row-fluid">
-	<ul class="thumbnails">
-		<li class="span4">
-			<div class="thumbnail">
-			<img data-src="holder.js/300x200" alt="">
-			<h3>썸네일1</h3>
-			<p>Thumbnail caption...</p>
-			</div>
-		</li>
-		<li class="span4">
-			<div class="thumbnail">
-			<img data-src="holder.js/300x200" alt="">
-			<h3>썸네일2</h3>
-			<p>Thumbnail caption...</p>
-			</div>
-		</li>
-		<li class="span4">
-			<div class="thumbnail">
-			<img data-src="holder.js/300x200" alt="">
-			<h3>썸네일3</h3>
-			<p>Thumbnail caption...</p>
-			</div>
-		</li>
-	</ul>
+<br />
+<br />
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <a href="#" class="thumbnail">
+      <img src="" data-src="holder.js/100%x180" alt="썸네일 1">
+    </a>
+  </div>
+  <div class="col-lg-4">
+    <a href="#" class="thumbnail">
+      <img src="" data-src="holder.js/100%x180" alt="썸네일 2">
+    </a>
+  </div>
+  <div class="col-lg-4">
+    <a href="#" class="thumbnail">
+      <img src="" data-src="holder.js/100%x180" alt="썸네일 3">
+    </a>
+  </div>
 </div>

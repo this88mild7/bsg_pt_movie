@@ -9,17 +9,9 @@
 </head>
 <body>
 
-	<header>
-		<tiles:insertAttribute name="header" />
-	</header>
-
 	<div class="container contents">
 		<tiles:insertAttribute name="content" />
 	</div>
-
-	<footer>
-	<tiles:insertAttribute name="footer" />
-	</footer>	
 
 </body>
 </html>

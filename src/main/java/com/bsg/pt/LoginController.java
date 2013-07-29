@@ -23,9 +23,19 @@ public class LoginController {
 	private LoginService loginService;
 	//LoginService loginService = new LoginService();
 
-	@RequestMapping(value = "index.do", method = RequestMethod.GET)
+	@RequestMapping(value = "login.do", method = RequestMethod.GET)
 	public ModelAndView index() {
-		return new ModelAndView("index");
+		return new ModelAndView("login");
+	}
+	
+	@RequestMapping(value = "join.do", method = RequestMethod.GET)
+	public ModelAndView join() {
+		return new ModelAndView("join");
+	}
+	
+	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
+	public ModelAndView auth() {
+		return new ModelAndView("main");
 	}
 	
 	@RequestMapping(value = "/main.do")
