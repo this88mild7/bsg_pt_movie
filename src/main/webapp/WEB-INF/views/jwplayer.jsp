@@ -7,10 +7,11 @@
 	<%@ include file="commonLib.jsp" %>  	
    
    <script type="text/javascript">
-	var player;
+	var movieplayer, swfPlayer;
 	$(function(){
     	
 		var movieSrc = "${movie}";
+		var ebookSrc = "${swfSrc}";
 	  
 		player = jwplayer("myElement").setup({
 		   		flashplayer: "player/jwplayer.swf",
@@ -22,6 +23,15 @@
 		player.onComplete(function(){
 			alert("finish");
 		});
+		
+		
+		swfPlayer = jwplayer("ebook").setup({
+		   		flashplayer: "player/jwplayer.swf",
+		        file: ebookSrc,
+		        width: 1027,
+		        height: 768
+		    });
+	
    }); 
     
    
@@ -43,7 +53,10 @@
 			<a href="#">vimeo</a>
 		</li>
 	</ul>
-	
+	<!-- 
 	<div id="myElement" >Loading the player...</div>
+	 -->
+	<br/>
+	<div id="ebook" >Loading the player...</div>
 
 </body>
