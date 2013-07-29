@@ -11,6 +11,10 @@
 .carousel-inner {
 	height: 500px;
 }
+
+.thumbnail img {
+	width: 100%;
+}
 </style>
 
 <div id="carousel-example-generic" class="carousel slide">
@@ -59,17 +63,17 @@
 <div class="row">
   <div class="col-lg-4">
     <a href="#" class="thumbnail">
-      <img src="" data-src="holder.js/100%x180" alt="썸네일 1">
+      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 1">
     </a>
   </div>
   <div class="col-lg-4">
     <a href="#" class="thumbnail">
-      <img src="" data-src="holder.js/100%x180" alt="썸네일 2">
+      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 2">
     </a>
   </div>
   <div class="col-lg-4">
     <a href="#" class="thumbnail">
-      <img src="" data-src="holder.js/100%x180" alt="썸네일 3">
+      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 3">
     </a>
   </div>
 </div>

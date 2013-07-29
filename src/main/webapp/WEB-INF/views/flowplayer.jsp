@@ -13,8 +13,8 @@
 		<a href="#">vimeo</a>
 	</li>
 </ul>
+
 <div class="row">
-	
 	<div class="col-lg-12">
 		<div id="01" class="flowplayer" data-swf="player/flowplayer.swf" >
 			<video>
