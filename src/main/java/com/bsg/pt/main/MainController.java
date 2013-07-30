@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bsg.pt.category.CategoryService;
-import com.bsg.pt.login.LoginService;
+import com.bsg.pt.user.UserService;
 
 
 /**
@@ -25,23 +25,8 @@ public class MainController {
 	
 	@Autowired
 	private CategoryService cateService;
-	private LoginService loginService;
+	private UserService loginService;
 	//LoginService loginService = new LoginService();
-
-	@RequestMapping(value = "login.do", method = RequestMethod.GET)
-	public ModelAndView index() {
-		return new ModelAndView("login");
-	}
-	
-	@RequestMapping(value = "join.do", method = RequestMethod.GET)
-	public ModelAndView join() {
-		return new ModelAndView("join");
-	}
-	
-	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
-	public ModelAndView auth() {
-		return new ModelAndView("main");
-	}
 	
 	@RequestMapping(value = "/main.do")
 	public ModelAndView main() throws ClassNotFoundException {
@@ -57,36 +42,8 @@ public class MainController {
 		
 		// 서브 타이틀
 		
-		
-//		boolean loginResult = loginService.login(loginDTO);
-//		
-//		if(loginResult) {
-//			mav.addObject("userList", loginService.getUserList());
-//			mav.setViewName("main");
-//		} else {
-//			//loginResult 가 1이 아니라면 
-//			mav.setViewName("error");
-//		}
-		
 		return mav;
 	}
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	
-	
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	public String home(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "home";
-//	}
 	
 }

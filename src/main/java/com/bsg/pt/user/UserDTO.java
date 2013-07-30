@@ -1,6 +1,6 @@
-package com.bsg.pt.login;
+package com.bsg.pt.user;
 
-public class LoginDTO {
+public class UserDTO {
 	private String id;
 	private String pwd;
 	private String name;

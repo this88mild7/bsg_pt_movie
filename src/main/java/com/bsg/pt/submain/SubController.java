@@ -1,4 +1,4 @@
-package com.bsg.pt;
+package com.bsg.pt.submain;
 
 
 import org.slf4j.Logger;

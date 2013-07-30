@@ -1,4 +1,4 @@
-package com.bsg.pt.login;
+package com.bsg.pt.user;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Service
-public class LoginService {
+public class UserService {
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Autowired
-	private LoginDao loginDao;
+	private UserDao loginDao;
 	
-	public boolean login(LoginDTO loginDTO) {
+	public boolean login(UserDTO loginDTO) {
 		
 		//JSP에서 파라미터가 잘 넘어 왔는지 확인해 봅시다.
 		logger.info(loginDTO.toString());
@@ -32,7 +32,7 @@ public class LoginService {
 		}
 	}
 	
-	public List<LoginDTO> getUserList() {
+	public List<UserDTO> getUserList() {
 		return loginDao.getUserList();
 	}
 }
