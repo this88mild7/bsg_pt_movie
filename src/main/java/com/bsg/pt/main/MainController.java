@@ -22,27 +22,7 @@ public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
 	@Autowired
-<<<<<<< HEAD:src/main/java/com/bsg/pt/LoginController.java
-	private LoginService loginService;
-	//LoginService loginService = new LoginService();
-
-	@RequestMapping(value = "login.do", method = RequestMethod.GET)
-	public ModelAndView index() {
-		return new ModelAndView("login");
-	}
-	
-	@RequestMapping(value = "join.do", method = RequestMethod.GET)
-	public ModelAndView join() {
-		return new ModelAndView("join");
-	}
-	
-	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
-	public ModelAndView auth() {
-		return new ModelAndView("main");
-	}
-=======
 	private CategoryService cateService;
->>>>>>> 패키지 분류:src/main/java/com/bsg/pt/main/MainController.java
 	
 	@RequestMapping(value = "/main.do")
 	public ModelAndView main() throws ClassNotFoundException {
