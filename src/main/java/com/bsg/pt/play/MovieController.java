@@ -1,4 +1,4 @@
-package com.bsg.pt;
+package com.bsg.pt.play;
 
 
 import org.slf4j.Logger;

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+
+
 
 <style>
 header .navbar-inner {
@@ -15,8 +16,8 @@ header .navbar-inner {
 			<a class="brand" href="/lucky"></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li><a href="/movie/main.do">메인</a></li>
-					<li><a href="/${contextPath}/sub.do">서브</a></li>
+					<li><a href="/${pageContext.request.contextPath}/main.do">메인</a></li>
+					<li><a href="/${pageContext.request.contextPath}/sub.do">서브</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

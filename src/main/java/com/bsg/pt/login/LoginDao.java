@@ -1,4 +1,4 @@
-package com.bsg.pt.dao;
+package com.bsg.pt.login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.bsg.pt.dto.LoginDTO;
 
 @Component
 public class LoginDao {
