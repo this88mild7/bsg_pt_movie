@@ -22,7 +22,7 @@ body {
 </style>
 
 <script>
-	// facebook
+	// facebook 로딩 속도를 확보하기 위해 다음과 같은 코드를 사용할 수도 있다.
 	window.fbAsyncInit = function() {  
 	    FB.init({appId: '168258180024105', status: true, cookie: true,xfbml: true});      
 	};  
@@ -39,8 +39,13 @@ body {
 			$("#facebooklogin").click(function(){
 			    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
 			        FB.login(function(response) {  
-			            var fbname;  
-			            var accessToken = response.authResponse.accessToken;  
+			        	if (response.session) {
+			        		// accessToken
+				            var accessToken = response.authResponse.accessToken;
+				            windows.location.href="/movie/main.do";
+		        		 } else {
+		        		   // user cancelled login
+		        		 }
 			        }, {scope: 'publish_stream,user_likes'});  
 				
 			});	
