@@ -21,6 +21,30 @@ body {
 }
 </style>
 
+<script>
+	// facebook
+	window.fbAsyncInit = function() {  
+	    FB.init({appId: '168258180024105', status: true, cookie: true,xfbml: true});      
+	};  
+	      
+	(function(d){  
+	   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];  
+	   if (d.getElementById(id)) {return;}  
+	   js = d.createElement('script'); js.id = id; js.async = true;  
+	   js.src = "//connect.facebook.net/en_US/all.js";  
+	   ref.parentNode.insertBefore(js, ref);  
+	 }(document));     
+	
+	$("#facebooklogin").onclick(function(){
+	    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
+	        FB.login(function(response) {  
+	            var fbname;  
+	            var accessToken = response.authResponse.accessToken;  
+	        }, {scope: 'publish_stream,user_likes'});  
+		
+	});
+</script>
+
 <form class="form-horizontal" action="${contextPath}/auth.do">
 	<fieldset>
 	  <legend class="text-center"><h1>스토리팜</h1></legend>
