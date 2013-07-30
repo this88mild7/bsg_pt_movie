@@ -1,4 +1,4 @@
-package com.bsg.pt.service;
+package com.bsg.pt.login;
 
 import java.util.List;
 
@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.bsg.pt.dao.LoginDao;
-import com.bsg.pt.dto.LoginDTO;
 
 @Service
 public class LoginService {

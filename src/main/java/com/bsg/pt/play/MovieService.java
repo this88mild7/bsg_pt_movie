@@ -1,4 +1,4 @@
-package com.bsg.pt.service;
+package com.bsg.pt.play;
 
 import org.springframework.stereotype.Service;
 
