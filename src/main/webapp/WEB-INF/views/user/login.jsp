@@ -35,7 +35,7 @@ body {
 	   ref.parentNode.insertBefore(js, ref);  
 	 }(document));     
 	
-	$("#facebooklogin").onclick(function(){
+	$("#facebooklogin").click(function(){
 	    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
 	        FB.login(function(response) {  
 	            var fbname;  
