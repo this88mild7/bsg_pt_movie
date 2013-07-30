@@ -60,26 +60,6 @@ body {
  
 
 <form class="form-horizontal" action="${contextPath}/auth.do">
-<<<<<<< HEAD
-  <div class="form-group">
-    <label for="inputEmail" class="col-lg-3 control-label">아이디</label>
-    <div class="col-lg-9">
-      <input type="text" class="form-control" id="inputId" placeholder="아이디">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-lg-3 control-label">비밀번호</label>
-    <div class="col-lg-9">
-      <input type="password" class="form-control" id="inputPwd" placeholder="비밀번호">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-lg-3 control-label"></label>
-    <div class="col-lg-9">
-      <button type="submit" class="btn btn-primary">로그인</button>
-      <button id="facebooklogin" type="button" class="btn">facebook 로그인</button>
-    </div>
-  </div>
 	<fieldset>
 	  <legend class="text-center"><h1>스토리팜</h1></legend>
 	  <div class="form-group">
@@ -105,10 +85,10 @@ body {
 	    <div class="col-lg-9">
 	      <button type="submit" class="btn btn-primary">로그인</button>
 	      <button id="facebooklogin" type="button" class="btn">facebook 로그인</button>
+	      <button id="googlelogin" type="button" class="btn">google 로그인</button>
 	    </div>
 	  </div>
 	</fieldset>
-	 <button id="authorize-button" style="visibility: hidden">Authorize</button>
    <script type="text/javascript">
       // Enter a client ID for a web application from the Google Developer Console.
       // The provided clientId will only work if the sample is run directly from
@@ -139,7 +119,7 @@ body {
 
 
       function handleAuthResult(authResult) {
-        var authorizeButton = document.getElementById('authorize-button');
+        var authorizeButton = document.getElementById('googlelogin');
         if (authResult && !authResult.error) {
           authorizeButton.style.visibility = 'hidden';
           makeApiCall();
@@ -161,18 +141,20 @@ body {
             'userId': 'me'
           });
           request.execute(function(resp) {
-            var heading = document.createElement('h4');
+        	  
+        	  window.location.href="/movie/main.do";
+            /* var heading = document.createElement('h4');
             var image = document.createElement('img');
             image.src = resp.image.url;
             heading.appendChild(image);
             heading.appendChild(document.createTextNode(resp.displayName));
-
-            document.getElementById('content').appendChild(heading);
+			
+            document.getElementById('content').appendChild(heading); */
+            
+            
           });
         });
       }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-    <div id="content"></div>
-    <p>Retrieves your profile name using the Google Plus API.</p>
 </form>
