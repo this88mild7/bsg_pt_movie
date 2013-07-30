@@ -13,10 +13,10 @@
 		<tiles:insertAttribute name="header" />
 	</header>
 
-	<div class="container-fluid contents">
-		<div class="row-fluid">
-			<div class="span2"><tiles:insertAttribute name="sidebar" /></div>
-			<div class="span10"><tiles:insertAttribute name="content" /></div>
+	<div class="container contents">
+		<div class="row">
+			<div class="col-lg-2"><tiles:insertAttribute name="sidebar" /></div>
+			<div class="col-lg-10"><tiles:insertAttribute name="content" /></div>
 		</div>
 	</div>
 

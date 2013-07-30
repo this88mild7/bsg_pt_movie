@@ -5,9 +5,22 @@
 
 <tiles-definitions>
     
+    <definition name="login" extends=".pure">
+        <put-attribute name="content" value="/WEB-INF/views/user/login.jsp" />
+    </definition>
+    
+    <definition name="join" extends=".pure">
+        <put-attribute name="content" value="/WEB-INF/views/user/join.jsp" />
+    </definition>
+    
     <definition name="main" extends=".default-with-sidebar">
         <put-attribute name="sidebar" value="/WEB-INF/views/includes/sidebar.jsp" />
         <put-attribute name="content" value="/WEB-INF/views/main.jsp" />
+    </definition>
+
+    <definition name="sub" extends=".default-with-sidebar">
+        <put-attribute name="sidebar" value="/WEB-INF/views/includes/sidebar.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/sub.jsp" />
     </definition>
     
     <definition name="flowplayer" extends=".default">

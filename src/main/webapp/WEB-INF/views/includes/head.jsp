@@ -9,13 +9,16 @@ HTML Style Guide
  - http://contribute.jquery.org/style-guide/html/ 
 -->
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/movie.css">
 <link rel="stylesheet" href="js/flowplayer/skin/minimalist.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/jwplayer/jwplayer.js"></script>
 <script src="js/flowplayer/flowplayer.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<!-- Bootstrap 3 RC1 -->
+<link rel="stylesheet" href="css/bootstrap3_rc1.min.css" >
+<script src="js/bootstrap3_rc1.min.js"></script>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" scope="request"/>
+

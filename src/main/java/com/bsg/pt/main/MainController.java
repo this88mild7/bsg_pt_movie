@@ -8,9 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bsg.pt.category.CategoryService;
+import com.bsg.pt.login.LoginService;
 
 
 /**
@@ -23,6 +25,23 @@ public class MainController {
 	
 	@Autowired
 	private CategoryService cateService;
+	private LoginService loginService;
+	//LoginService loginService = new LoginService();
+
+	@RequestMapping(value = "login.do", method = RequestMethod.GET)
+	public ModelAndView index() {
+		return new ModelAndView("login");
+	}
+	
+	@RequestMapping(value = "join.do", method = RequestMethod.GET)
+	public ModelAndView join() {
+		return new ModelAndView("join");
+	}
+	
+	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
+	public ModelAndView auth() {
+		return new ModelAndView("main");
+	}
 	
 	@RequestMapping(value = "/main.do")
 	public ModelAndView main() throws ClassNotFoundException {
