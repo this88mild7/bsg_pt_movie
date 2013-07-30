@@ -39,12 +39,12 @@ body {
 			$("#facebooklogin").click(function(){
 			    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
 			        FB.login(function(response) {  
-			        	if (response.session) {
+			        	if (response.authResponse) {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
-				            windows.location.href="/movie/main.do";
+				            window.location.href="/movie/main.do";
 		        		 } else {
-		        		   // user cancelled login
+		        			 alert("facebook 로그인 오류가 발생 하였습니다.");
 		        		 }
 			        }, {scope: 'publish_stream,user_likes'});  
 				
