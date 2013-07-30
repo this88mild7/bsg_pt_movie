@@ -35,14 +35,20 @@ body {
 	   ref.parentNode.insertBefore(js, ref);  
 	 }(document));     
 	
-	$("#facebooklogin").click(function(){
-	    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
-	        FB.login(function(response) {  
-	            var fbname;  
-	            var accessToken = response.authResponse.accessToken;  
-	        }, {scope: 'publish_stream,user_likes'});  
+	$(function(){
+			$("#facebooklogin").click(function(){
+			    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
+			        FB.login(function(response) {  
+			            var fbname;  
+			            var accessToken = response.authResponse.accessToken;  
+			        }, {scope: 'publish_stream,user_likes'});  
+				
+			});	
 		
-	});
+		}
+	);
+	
+	
 </script>
 
 <form class="form-horizontal" action="${contextPath}/auth.do">
@@ -62,7 +68,7 @@ body {
     <label for="inputPassword" class="col-lg-3 control-label"></label>
     <div class="col-lg-9">
       <button type="submit" class="btn btn-primary">로그인</button>
-      <button id="facebooklogin" type="button" class="btn btn-primary">facebook 로그인</button>
+      <button id="facebooklogin" type="button" class="btn">facebook 로그인</button>
     </div>
   </div>
 </form>
