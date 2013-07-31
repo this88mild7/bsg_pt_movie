@@ -5,20 +5,20 @@
 
 <tiles-definitions>
 
-	<definition name=".pure" template="/WEB-INF/views/layouts/pure.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/includes/head.jsp" />
+	<definition name=".pure" template="/WEB-INF/views/common/pure.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/common/head.jsp" />
 	</definition>
 
-	<definition name=".default" template="/WEB-INF/views/layouts/default.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/includes/head.jsp" />
-		<put-attribute name="header" value="/WEB-INF/views/includes/header.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/includes/footer.jsp" />
+	<definition name=".default" template="/WEB-INF/views/common/default.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/common/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 
-	<definition name=".default-with-sidebar" template="/WEB-INF/views/layouts/default-with-sidebar.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/includes/head.jsp" />
-		<put-attribute name="header" value="/WEB-INF/views/includes/header.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/includes/footer.jsp" />
+	<definition name=".default-with-sidebar" template="/WEB-INF/views/common/default-with-sidebar.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/common/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 
 </tiles-definitions>

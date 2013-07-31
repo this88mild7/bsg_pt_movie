@@ -3,7 +3,7 @@
 <html>
 <head>
 <script>
-window.location.href = "/movie/login.do";
+window.location.href = "/movie/loginView.do";
 </script>
 </head>
 <body>

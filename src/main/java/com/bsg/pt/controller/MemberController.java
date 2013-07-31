@@ -26,21 +26,21 @@ public class MemberController {
 	
 	@RequestMapping(value = "loginView.do", method = RequestMethod.GET)
 	public String loginView(Model model) {
-		return "view/login";
+		return "member/login";
 	}
 	
 	@RequestMapping(value = "login.do", method = RequestMethod.GET)
 	public String login(Model model) {
-		return "view/login";
+		return "view/main";
 	}
 	
 	@RequestMapping(value = "joinView.do", method = RequestMethod.GET)
 	public String joinView(Model model) {
-		return "view/join";
+		return "member/join";
 	}
 	@RequestMapping(value = "join.do", method = RequestMethod.GET)
 	public String join(Model model) {
-		return "view/main";
+		return "member/login";
 	}
 	
 	@RequestMapping(value = "auth.do", method = RequestMethod.GET)

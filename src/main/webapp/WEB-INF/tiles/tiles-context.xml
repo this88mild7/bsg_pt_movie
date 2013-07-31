@@ -6,11 +6,12 @@
 <tiles-definitions>
     
         <!-- wildcard -->
-    <definition name="*" extends=".layout-default">
+    <definition name="*" extends=".default">
         <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
     </definition>
     
-     <definition name="*/*" extends=".layout-default">
+     <definition name="*/*" extends=".default">
+        <put-attribute name="sidebar" value="/WEB-INF/views/includes/sidebar.jsp" />
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>
     

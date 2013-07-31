@@ -4,6 +4,7 @@ package com.bsg.pt.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,12 +29,11 @@ public class ContentsController {
 	
 	
 	@RequestMapping(value = "jwplayer.do")
-	public ModelAndView jwplayer() {
+	public String jwplayer(Model model) {
 		
-		ModelAndView mav = new ModelAndView("jwplayer");
-		mav.addObject("movie", movieSrc);
-		mav.addObject("swfSrc", swfSrc);
-		return mav;
+		model.addAttribute("movie", movieSrc);
+		model.addAttribute("swfSrc", swfSrc);
+		return "view/jwplayer";
 	}
 	
 	

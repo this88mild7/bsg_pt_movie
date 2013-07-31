@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,18 +26,15 @@ public class ViewController {
 	private ViewService cateService;
 	
 	@RequestMapping(value = "/main.do")
-	public ModelAndView main() throws ClassNotFoundException {
-		ModelAndView mav = new ModelAndView();
+	public String main(Model model) throws ClassNotFoundException {
 		List<Map<String, Object>> cateList = cateService.cateList();
-		mav.addObject("cateList", cateList);
-		mav.setViewName("main");
-		return mav;
+		model.addAttribute("cateList", cateList);
+		return "view/main";
 	}
 	
 	@RequestMapping(value = "sub.do")
-	public ModelAndView flowerplay() {
-		ModelAndView mav = new ModelAndView("sub");
-		return mav;
+	public String flowerplay(Model model) {
+		return "view/sub";
 	}
 	
 	
