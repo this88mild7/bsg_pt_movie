@@ -1,4 +1,4 @@
-package com.bsg.pt.category;
+package com.bsg.pt.service;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -16,12 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.bsg.pt.service.ViewService;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:servlet-contextForTest.xml"})
 public class CategoryServiceTest {
 	
 	@Autowired
-	private CategoryService cateService;
+	private ViewService cateService;
 
 
 	@After

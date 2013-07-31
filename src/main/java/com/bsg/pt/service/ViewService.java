@@ -1,4 +1,4 @@
-package com.bsg.pt.category;
+package com.bsg.pt.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,12 +8,12 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CategoryService {
+public class ViewService {
 	
 	
 	List<String> tempCateList = new ArrayList<String>();
 	
-	public CategoryService(){
+	public ViewService(){
 		tempCateList.add("유아");
 		tempCateList.add("한글");
 		tempCateList.add("수학");

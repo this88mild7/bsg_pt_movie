@@ -20,7 +20,7 @@ body {
 	margin-left: 150px;
 }
 </style>
-
+<script src="http://platform.twitter.com/anywhere.js?id=CBn666ysOIEVuy2Y5vUjA&v=1"></script >
 <script>
 	// facebook 로딩 속도를 확보하기 위해 다음과 같은 코드를 사용할 수도 있다.
 	window.fbAsyncInit = function() {  
@@ -48,14 +48,14 @@ body {
 		        		 }
 			        }, {scope: 'publish_stream,user_likes'});  
 				
-			});	
-		
+			});
 		}
 	);
 	
 	
+	
 </script>
-
+ 
 <!-- google -->
  
 
@@ -143,15 +143,6 @@ body {
           request.execute(function(resp) {
         	  
         	  window.location.href="/movie/main.do";
-            /* var heading = document.createElement('h4');
-            var image = document.createElement('img');
-            image.src = resp.image.url;
-            heading.appendChild(image);
-            heading.appendChild(document.createTextNode(resp.displayName));
-			
-            document.getElementById('content').appendChild(heading); */
-            
-            
           });
         });
       }

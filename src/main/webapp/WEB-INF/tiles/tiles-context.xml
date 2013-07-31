@@ -5,6 +5,16 @@
 
 <tiles-definitions>
     
+        <!-- wildcard -->
+    <definition name="*" extends=".layout-default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    
+     <definition name="*/*" extends=".layout-default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    
+    <!-- 
     <definition name="login" extends=".pure">
         <put-attribute name="content" value="/WEB-INF/views/user/login.jsp" />
     </definition>
@@ -30,5 +40,6 @@
     <definition name="jwplayer" extends=".default">
         <put-attribute name="content" value="/WEB-INF/views/jwplayer.jsp" />
     </definition>
+     -->
     
 </tiles-definitions>
