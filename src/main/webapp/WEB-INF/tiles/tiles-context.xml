@@ -10,10 +10,19 @@
         <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
     </definition>
     
-     <definition name="*/*" extends=".default">
-        <put-attribute name="sidebar" value="/WEB-INF/views/includes/sidebar.jsp" />
+     <definition name="nosidebar-*/*" extends=".default">
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>
+    
+     <definition name="sidebar-*/*" extends=".default-with-sidebar">
+        <put-attribute name="sidebar" value="/WEB-INF/views/common/sidebar.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    
+     <definition name="pure-*/*" extends=".pure">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    
     
     <!-- 
     <definition name="login" extends=".pure">

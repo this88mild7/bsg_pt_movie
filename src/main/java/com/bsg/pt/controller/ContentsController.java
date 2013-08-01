@@ -21,7 +21,7 @@ public class ContentsController {
 	
 	@RequestMapping(value = "flowplayer.do")
 	public ModelAndView flowerplay() {
-		ModelAndView mav = new ModelAndView("view/flowplayer");
+		ModelAndView mav = new ModelAndView("sidebar-view/flowplayer");
 		mav.addObject("movie", movieSrc);
 		mav.addObject("swfSrc", swfSrc);
 		return mav;
@@ -33,7 +33,7 @@ public class ContentsController {
 		
 		model.addAttribute("movie", movieSrc);
 		model.addAttribute("swfSrc", swfSrc);
-		return "view/jwplayer";
+		return "sidebar-view/jwplayer";
 	}
 	
 	

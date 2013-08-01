@@ -26,12 +26,12 @@ public class MemberController {
 	
 	@RequestMapping(value = "loginView.do", method = RequestMethod.GET)
 	public String loginView(Model model) {
-		return "member/login";
+		return "pure-member/login";
 	}
 	
 	@RequestMapping(value = "login.do", method = RequestMethod.GET)
 	public String login(Model model) {
-		return "view/main";
+		return "redirect:main.do";
 	}
 	
 	@RequestMapping(value = "joinView.do", method = RequestMethod.GET)
@@ -45,7 +45,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
 	public String auth(Model model) {
-		return "view/main";
+		return "redirect:main.do";
 	}
 
 }

@@ -29,12 +29,12 @@ public class ViewController {
 	public String main(Model model) throws ClassNotFoundException {
 		List<Map<String, Object>> cateList = cateService.cateList();
 		model.addAttribute("cateList", cateList);
-		return "view/main";
+		return "sidebar-view/main";
 	}
 	
 	@RequestMapping(value = "sub.do")
 	public String flowerplay(Model model) {
-		return "view/sub";
+		return "sidebar-view/sub";
 	}
 	
 	
