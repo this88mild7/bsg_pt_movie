@@ -1,10 +1,17 @@
 package com.bsg.pt.controller;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,17 +28,12 @@ public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
-	private MemeberService loginService;
+	private MemeberService memberService;
 
 	
 	@RequestMapping(value = "loginView.do", method = RequestMethod.GET)
 	public String loginView(Model model) {
 		return "pure-member/login";
-	}
-	
-	@RequestMapping(value = "login.do", method = RequestMethod.GET)
-	public String login(Model model) {
-		return "redirect:main.do";
 	}
 	
 	@RequestMapping(value = "joinView.do", method = RequestMethod.GET)
@@ -43,9 +45,15 @@ public class MemberController {
 		return "member/login";
 	}
 	
-	@RequestMapping(value = "auth.do", method = RequestMethod.GET)
-	public String auth(Model model) {
-		return "redirect:main.do";
+	@RequestMapping(value = "auth.do", method = RequestMethod.POST)
+	public String auth(Model model, HttpServletRequest request) {
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("member_id",request.getParameter("member_id"));
+		paramMap.put("member_pw",request.getParameter("member_pw"));
+		if(memberService.isAuth(paramMap)){
+			return "redirect:main.do";
+		}else{
+			return "redirect:loginView.do";
+		}
 	}
-
 }

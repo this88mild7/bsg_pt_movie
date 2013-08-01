@@ -5,13 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 
 @Component
-public class MemberDao {
+public class MemberDao extends SqlSessionDaoSupport{
+	
+	public int memberCheckCount(Map<String, Object> userInfo){
+		return (Integer)getSqlSession().selectOne("member.checkCount", userInfo);
+	}
 	
 	public List<Map<String, String>> getUserList() {
 		
@@ -45,4 +50,5 @@ public class MemberDao {
 		
 		return userList;
 	}
+
 }

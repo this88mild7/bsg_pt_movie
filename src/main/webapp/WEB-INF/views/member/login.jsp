@@ -39,6 +39,7 @@ body {
 			$("#facebooklogin").click(function(){
 			    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
 			        FB.login(function(response) {  
+			        	console.log(response);
 			        	if (response.authResponse) {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
@@ -65,13 +66,13 @@ body {
 	  <div class="form-group">
 	    <label for="inputEmail" class="col-lg-3 control-label">아이디</label>
 	    <div class="col-lg-9">
-	      <input type="text" class="form-control" id="inputId" placeholder="아이디">
+	      <input type="text" class="form-control" id="inputId" name="member_id"placeholder="아이디">
 	    </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="inputPassword" class="col-lg-3 control-label">비밀번호</label>
 	    <div class="col-lg-9">
-	      <input type="password" class="form-control" id="inputPwd" placeholder="비밀번호">
+	      <input type="password" class="form-control" id="inputPwd" name="member_pw" placeholder="비밀번호">
 	    </div>
 	  </div>
 	  <div class="form-group">
@@ -141,7 +142,7 @@ body {
             'userId': 'me'
           });
           request.execute(function(resp) {
-        	  
+        	  console.log(resp);
         	  window.location.href="/movie/main.do";
           });
         });
