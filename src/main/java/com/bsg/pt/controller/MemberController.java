@@ -66,9 +66,9 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "facebooklogin.do", produces = "application/json;charset=UTF-8")
-	public @ResponseBody String facebooklogin(String facebook_userID, String user_name, String user_email) {
+	public @ResponseBody String facebooklogin(String user_id, String user_name, String user_email) {
 		Map<String, Object> facebookUserInfo = new HashMap<String, Object>();
-		facebookUserInfo.put("facebook_userID", facebook_userID);
+		facebookUserInfo.put("user_id", user_id);
 		facebookUserInfo.put("user_name", user_name);
 		facebookUserInfo.put("user_email", user_email);
 		

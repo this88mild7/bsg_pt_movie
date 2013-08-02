@@ -16,7 +16,7 @@
 		SELECT COUNT(*)
 		FROM BG_MEMBER
 		WHERE 1=1
-		AND MEMBER_ID = #{user_email}
+		AND MEMBER_ID = #{user_id}
    </select>
    
    <insert id="facebookId" parameterType="java.util.Map">
@@ -25,7 +25,7 @@
    			MEMBER_NM   			
    		)
    		VALUES(
-   			#{user_email},
+   			#{user_id},
    			#{user_name}
    		)
    </insert>
