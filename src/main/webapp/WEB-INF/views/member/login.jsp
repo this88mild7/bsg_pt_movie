@@ -119,11 +119,8 @@ $(function(){
 							});
 			
 			});
-        	 // window.location.href="/movie/main.do";
           });
-        });
-      }
-      
+        };
 });
 </script> 
 
