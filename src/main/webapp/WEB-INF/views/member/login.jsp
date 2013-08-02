@@ -45,9 +45,9 @@ body {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
 				            FB.api('/me', function(userInfo) {
-					            $.post("facebooklogin.do",  {
+					            $.post("externalLogin.do",  {
 									                		'user_id' : userInfo.email,
-									                		'user_name ' : userInfo.name,
+									                		'user_name' : userInfo.name,
 									                		'user_email' : userInfo.email
 									                }, 
 									                function(data) {
@@ -105,9 +105,9 @@ $(function(){
           });
           request.execute(function(resp) {
         	  console.log(resp);
-        	  $.post("facebooklogin.do",  {
+        	  $.post("externalLogin.do",  {
 			          		'user_id' : resp.id,
-			          		'user_name ' : resp.displayName,
+			          		'user_name' : resp.displayName,
 			          }, 
 			          function(data) {
 								console.log(data);
@@ -117,7 +117,6 @@ $(function(){
 									alert("google 로그인 오류가 발생 하였습니다.");
 								}
 							});
-			
 			});
           });
         };
