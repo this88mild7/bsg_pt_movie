@@ -123,7 +123,7 @@ $(function(){
 });
 </script> 
 
-<form class="form-horizontal" action="${contextPath}/auth.do">
+<form class="form-horizontal" action="${contextPath}/auth.do" method="POST">
 	<fieldset>
 	  <legend class="text-center"><h1>스토리팜</h1></legend>
 	  <div class="form-group">

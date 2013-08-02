@@ -36,5 +36,11 @@ public class ContentsController {
 		return "sidebar-view/jwplayer";
 	}
 	
+	@RequestMapping(value = "vimeo.do")
+	public ModelAndView vimeo() {
+		ModelAndView mav = new ModelAndView("sidebar-view/vimeo");
+		return mav;
+	}
+	
 	
 }
