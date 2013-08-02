@@ -143,7 +143,7 @@ body {
           });
           request.execute(function(resp) {
         	  console.log(resp);
-        	  window.location.href="/movie/main.do";
+        	 // window.location.href="/movie/main.do";
           });
         });
       }
