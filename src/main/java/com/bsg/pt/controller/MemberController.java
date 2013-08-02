@@ -67,6 +67,9 @@ public class MemberController {
 	@RequestMapping(value = "facebooklogin.do", produces = "application/json;charset=UTF-8")
 	public @ResponseBody String facebooklogin(String facebook_userID) {
 		System.out.println(facebook_userID);
+		
+		memberService.createFacebookAccount(facebook_userID);
+		
 		JSONObject json = new JSONObject();
 		json.put(CODE, SUCC_CODE);
 		json.put(MSG, SUCC_MSG);

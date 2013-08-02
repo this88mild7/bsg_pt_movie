@@ -12,4 +12,20 @@
        AND MEMBER_PW = #{member_pw}     
    </select>
    
+   <select id="facebookCount" resultType="int">
+		SELECT COUNT(*)
+		FROM BG_MEMBER
+		WHERE 1=1
+		AND MEMBER_ID = #{facebook_userID}
+   </select>
+   
+   <insert id="facebookId">
+   		INSERT BG_MEMBER(
+   			MEMBER_ID
+   		)
+   		VALUES(
+   			#{facebook_userID}
+   		)
+   </insert>
+   
 </mapper>

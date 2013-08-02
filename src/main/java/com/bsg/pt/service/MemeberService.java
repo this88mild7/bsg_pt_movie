@@ -20,15 +20,15 @@ public class MemeberService {
 	@Autowired
 	private MemberDao memberDao;
 	
-	public List<Map<String, String>> getUserList() {
-		return memberDao.getUserList();
-	}
-
 	public boolean isAuth(Map<String, Object> asMap) {
 		if(memberDao.memberCheckCount(asMap) == 0){
 			return false;
 		}else{
 			return true;
 		}
+	}
+
+	public void createFacebookAccount(String facebook_userID) {
+		memberDao.createFacebookAccount(facebook_userID);
 	}
 }

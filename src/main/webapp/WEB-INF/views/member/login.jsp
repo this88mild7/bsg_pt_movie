@@ -44,9 +44,13 @@ body {
 			        	if (response.authResponse) {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
-				            //window.location.href="/movie/main.do";
 				            $.getJSON("facebooklogin.do", {"facebook_userID" : response.authResponse.userID}, function(data) {
 								console.log(data);
+								if(data.code ="200"){
+						            window.location.href="/movie/main.do";
+								}else{
+									alert("facebook 로그인 오류가 발생 하였습니다.");
+								}
 							});
 		        		 } else {
 		        			 alert("facebook 로그인 오류가 발생 하였습니다.");

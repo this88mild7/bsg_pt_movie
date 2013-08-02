@@ -1,5 +1,8 @@
 package com.bsg.pt.controller;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,8 +30,12 @@ public class MemberControllerTest {
     @Autowired
     private RequestMappingHandlerMapping handlerMapping;
     
+    
+    
     MockHttpServletRequest request = null;
     MockHttpServletResponse response = null;
+    ModelAndView mav = null;
+    Object handler = null;
 
     @Before
     public void tearUp() throws Exception {
@@ -40,7 +47,6 @@ public class MemberControllerTest {
 	public void testAuth() throws Exception{
 
 		// given 
-		
         request.addParameter("member_id", "test1");
         request.addParameter("member_pw", "1234");
         request.setRequestURI("/auth.do");
@@ -71,6 +77,28 @@ public class MemberControllerTest {
 		
 		// then
 		ModelAndViewAssert.assertViewName(mav,"redirect:loginView.do");
+		
+	}
+	
+	@Test
+	public void testFacebookLogin() {
+
+		// given 
+		
+		  request.addParameter("facebook_userID", "100000808279144");
+		  request.setRequestURI("/facebooklogin.do");
+		
+		// when
+		  try {
+			  handler = handlerMapping.getHandler(request).getHandler();
+			  mav = handleAdapter.handle(request, response,handler);
+		  } catch (Exception e) {
+			  e.printStackTrace();
+		  }
+
+		  ModelAndViewAssert.assertViewName(mav,"redirect:loginView.do");
+		// then
+
 		
 	}
 
