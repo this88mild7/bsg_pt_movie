@@ -53,7 +53,7 @@ body {
 									                function(data) {
 															console.log(data);
 															if(data.code ="200"){
-													            window.location.href="/movie/main.do";
+													            window.location.href="/storyfarm/main.do";
 															}else{
 																alert("facebook 로그인 오류가 발생 하였습니다.");
 															}
@@ -112,7 +112,7 @@ $(function(){
 			          function(data) {
 								console.log(data);
 								if(data.code ="200"){
-						            window.location.href="/movie/main.do";
+						            window.location.href="/storyfarm/main.do";
 								}else{
 									alert("google 로그인 오류가 발생 하였습니다.");
 								}

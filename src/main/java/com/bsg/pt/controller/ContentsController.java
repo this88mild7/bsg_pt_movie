@@ -16,8 +16,8 @@ public class ContentsController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ContentsController.class);
 	
-	private String movieSrc = "/movie/source/ani_song07.mp4";
-	private String swfSrc = "/movie/source/book1_1.swf";
+	private String movieSrc = "/storyfarm/source/ani_song07.mp4";
+	private String swfSrc = "/storyfarm/source/book1_1.swf";
 	
 	@RequestMapping(value = "flowplayer.do")
 	public ModelAndView flowerplay() {
