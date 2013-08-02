@@ -18,7 +18,7 @@ public class MemberDao extends SqlSessionDaoSupport{
 		return (Integer)getSqlSession().selectOne("member.checkCount", userInfo);
 	}
 	
-	public void createFacebookAccount(Map<String, String> userInfoMap) {
+	public void createFacebookAccount(Map<String, Object> userInfoMap) {
 		int facebookIDCount = (Integer)getSqlSession().selectOne("member.facebookCount", userInfoMap);
 		if(facebookIDCount == 0){
 			getSqlSession().insert("member.facebookId", userInfoMap);

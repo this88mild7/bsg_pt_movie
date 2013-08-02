@@ -2,6 +2,7 @@ package com.bsg.pt.controller;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -66,14 +67,25 @@ public class MemberController {
 	
 	@RequestMapping(value = "facebooklogin.do", produces = "application/json;charset=UTF-8")
 	public @ResponseBody String facebooklogin(String facebook_userID, String user_name, String user_email) {
-		Map<String, String> facebookUserInfo = new HashMap<String, String>();
+		Map<String, Object> facebookUserInfo = new HashMap<String, Object>();
 		facebookUserInfo.put("facebook_userID", facebook_userID);
 		facebookUserInfo.put("user_name", user_name);
 		facebookUserInfo.put("user_email", user_email);
+		
+		printAjaxParam(facebookUserInfo);
+		
 		memberService.createFacebookAccount(facebookUserInfo);
 		JSONObject json = new JSONObject();
 		json.put(CODE, SUCC_CODE);
 		json.put(MSG, SUCC_MSG);
 		return json.toString();
+	}
+	
+	private void printAjaxParam(Map<String, Object> paramMap){
+		Iterator it =  paramMap.keySet().iterator();
+		while(it.hasNext()){
+			String key = it.next().toString();
+			logger.info("{}={}", key, paramMap.get(key));
+		}
 	}
 }

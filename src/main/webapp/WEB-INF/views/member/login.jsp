@@ -44,27 +44,26 @@ body {
 			        	if (response.authResponse) {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
-			        		var paramData;
 				            FB.api('/me', function(userInfo) {
-				                paramData = {
-				                		"facebook_userID" : response.authResponse.userID,
-				                		"user_name " : userInfo.name,
-				                		"user_email" : userInfo.eamil
-				                };
-				              });
-			        		
-				            $.getJSON("facebooklogin.do", paramData, function(data) {
-								console.log(data);
-								if(data.code ="200"){
-						            window.location.href="/movie/main.do";
-								}else{
-									alert("facebook 로그인 오류가 발생 하였습니다.");
-								}
-							});
-		        		 } else {
-		        			 alert("facebook 로그인 오류가 발생 하였습니다.");
-		        		 }
-			        }, {scope: 'publish_stream,email,user_likes'});  
+					            $.post("facebooklogin.do",  {
+									                		'facebook_userID' : response.authResponse.userID,
+									                		'user_name ' : userInfo.name,
+									                		'user_email' : userInfo.email
+									                }, 
+									                function(data) {
+															console.log(data);
+															if(data.code ="200"){
+													            window.location.href="/movie/main.do";
+															}else{
+																alert("facebook 로그인 오류가 발생 하였습니다.");
+															}
+														});
+						        		 
+				         		     });
+					        	} else {
+				        			 alert("facebook 로그인 오류가 발생 하였습니다.");
+				        		 }
+			       			 }, {scope: 'publish_stream,email,user_likes'});  
 				
 			});
 		}
