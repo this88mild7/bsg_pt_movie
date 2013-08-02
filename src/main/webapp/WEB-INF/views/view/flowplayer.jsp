@@ -9,8 +9,8 @@
 	<li>
 		<a href="${contextPath}/jwplayer.do">jw-palyer</a>
 	</li>
-	<li  class="disabled">
-		<a href="#">vimeo</a>
+	<li>
+		<a href="${contextPath}/vimeo.do">vimeo</a>
 	</li>
 </ul>
 
