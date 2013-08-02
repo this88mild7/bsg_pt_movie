@@ -9,7 +9,13 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+    <!-- Intercepter -->
+     <interceptors>
+      <interceptor>
+         <mapping path="/**" />
+         <beans:bean class="com.bsg.pt.common.Interceptor" />
+      </interceptor>
+   </interceptors>
     
     <!-- Enables the Spring MVC @Controller programming model -->
     <annotation-driven />

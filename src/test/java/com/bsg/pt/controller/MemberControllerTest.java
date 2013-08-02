@@ -85,7 +85,8 @@ public class MemberControllerTest {
 
 		// given 
 		
-		  request.addParameter("facebook_userID", "100000808279144");
+		  request.addParameter("user_email", "this88mild7@gmail.com");
+		  request.addParameter("user_name", "Jisoon Choi");
 		  request.setRequestURI("/facebooklogin.do");
 		
 		// when

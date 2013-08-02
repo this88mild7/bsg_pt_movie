@@ -19,14 +19,14 @@
 		AND MEMBER_ID = #{user_email}
    </select>
    
-   <insert id="facebookId">
+   <insert id="facebookId" parameterType="java.util.Map">
    		INSERT BG_MEMBER(
    			MEMBER_ID,
    			MEMBER_NM   			
    		)
    		VALUES(
-   			#{facebook_userID},
-   			#{user_email}
+   			#{user_email},
+   			#{user_name}
    		)
    </insert>
    
