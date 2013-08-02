@@ -65,11 +65,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "facebooklogin.do", produces = "application/json;charset=UTF-8")
-	public @ResponseBody String facebooklogin(String facebook_userID) {
-		System.out.println(facebook_userID);
-		
-		memberService.createFacebookAccount(facebook_userID);
-		
+	public @ResponseBody String facebooklogin(String facebook_userID, String user_name, String user_email) {
+		Map<String, String> facebookUserInfo = new HashMap<String, String>();
+		facebookUserInfo.put("facebook_userID", facebook_userID);
+		facebookUserInfo.put("user_name", user_name);
+		facebookUserInfo.put("user_email", user_email);
+		memberService.createFacebookAccount(facebookUserInfo);
 		JSONObject json = new JSONObject();
 		json.put(CODE, SUCC_CODE);
 		json.put(MSG, SUCC_MSG);

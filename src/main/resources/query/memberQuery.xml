@@ -16,15 +16,17 @@
 		SELECT COUNT(*)
 		FROM BG_MEMBER
 		WHERE 1=1
-		AND MEMBER_ID = #{facebook_userID}
+		AND MEMBER_ID = #{user_email}
    </select>
    
    <insert id="facebookId">
    		INSERT BG_MEMBER(
-   			MEMBER_ID
+   			MEMBER_ID,
+   			MEMBER_NM   			
    		)
    		VALUES(
-   			#{facebook_userID}
+   			#{facebook_userID},
+   			#{user_email}
    		)
    </insert>
    

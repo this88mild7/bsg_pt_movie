@@ -28,7 +28,7 @@ public class MemeberService {
 		}
 	}
 
-	public void createFacebookAccount(String facebook_userID) {
-		memberDao.createFacebookAccount(facebook_userID);
+	public void createFacebookAccount(Map<String, String> userInfoMap) {
+		memberDao.createFacebookAccount(userInfoMap);
 	}
 }
