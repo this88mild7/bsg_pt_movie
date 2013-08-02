@@ -40,10 +40,14 @@ body {
 			    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
 			        FB.login(function(response) {  
 			        	console.log(response);
+			        	console.log(response.authResponse.userID);
 			        	if (response.authResponse) {
 			        		// accessToken
 				            var accessToken = response.authResponse.accessToken;
-				            window.location.href="/movie/main.do";
+				            //window.location.href="/movie/main.do";
+				            $.getJSON("facebooklogin.do", {"facebook_userID" : response.authResponse.userID}, function(data) {
+								console.log(data);
+							});
 		        		 } else {
 		        			 alert("facebook 로그인 오류가 발생 하였습니다.");
 		        		 }

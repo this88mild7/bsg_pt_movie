@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bsg.pt.service.MemeberService;
@@ -26,6 +28,11 @@ import com.bsg.pt.service.MemeberService;
 public class MemberController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
+	private final String CODE = "code";
+	private final String MSG = "msg";
+	private final String SUCC_CODE = "200";
+	private final String SUCC_MSG = "ok";
 	
 	@Autowired
 	private MemeberService memberService;
@@ -55,5 +62,14 @@ public class MemberController {
 		}else{
 			return "redirect:loginView.do";
 		}
+	}
+	
+	@RequestMapping(value = "facebooklogin.do", produces = "application/json;charset=UTF-8")
+	public @ResponseBody String facebooklogin(String facebook_userID) {
+		System.out.println(facebook_userID);
+		JSONObject json = new JSONObject();
+		json.put(CODE, SUCC_CODE);
+		json.put(MSG, SUCC_MSG);
+		return json.toString();
 	}
 }
