@@ -3,7 +3,7 @@
 <html>
 <head>
 <script>
-window.location.href = "/storyfarm/loginView.do";
+window.location.href = "/storyfarm/main.do";
 </script>
 </head>
 <body>

@@ -58,6 +58,8 @@ public class Interceptor extends HandlerInterceptorAdapter {
 						// "UTF-8");
 						paramIngo += ", " + values[x];
 					}
+					sb.append(paramIngo);
+					sb.append("]");
 				}
 
 			}

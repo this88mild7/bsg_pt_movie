@@ -62,17 +62,17 @@
 
 <div class="row">
   <div class="col-lg-4">
-    <a href="#" class="thumbnail">
+    <a href="play.do?contentsId=0" class="thumbnail">
       <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 1">
     </a>
   </div>
   <div class="col-lg-4">
-    <a href="#" class="thumbnail">
+    <a href="play.do?contentsId=1" class="thumbnail">
       <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 2">
     </a>
   </div>
   <div class="col-lg-4">
-    <a href="#" class="thumbnail">
+    <a href="play.do?contentsId=2" class="thumbnail">
       <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 3">
     </a>
   </div>

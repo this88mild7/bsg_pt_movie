@@ -59,6 +59,7 @@ public class MemberController {
 		paramMap.put("member_id",request.getParameter("member_id"));
 		paramMap.put("member_pw",request.getParameter("member_pw"));
 		if(memberService.isAuth(paramMap)){
+			request.getSession().setAttribute("isLogin", true);
 			return "redirect:main.do";
 		}else{
 			return "redirect:loginView.do";

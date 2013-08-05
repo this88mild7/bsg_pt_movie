@@ -19,6 +19,11 @@
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>
     
+     <definition name="player-sidebar-*/*" extends=".default-with-player-sidebar">
+        <put-attribute name="player-sidebar" value="/WEB-INF/views/common/player-sidebar.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    
      <definition name="pure-*/*" extends=".pure">
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>

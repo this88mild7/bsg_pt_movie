@@ -20,5 +20,11 @@
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
+	
+	<definition name=".default-with-player-sidebar" template="/WEB-INF/views/common/default-with-player-sidebar.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/common/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
 
 </tiles-definitions>

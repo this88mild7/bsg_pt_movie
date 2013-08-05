@@ -8,41 +8,17 @@
 }
 </style>
 
-<div class="row">
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 1">
-    </a>
-  </div>
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 2">
-    </a>
-  </div>
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 3">
-    </a>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 1">
-    </a>
-  </div>
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 2">
-    </a>
-  </div>
-  <div class="col-lg-4">
-    <a href="#" class="thumbnail">
-      <img src="${contextPath}/img/bag.jpg" data-src="holder.js/100%x180" alt="썸네일 3">
-    </a>
-  </div>
-</div>
+	 <div class="row">
+<c:forEach items="${contensList}" var="contents">
+			  <div class="col-lg-4">
+			    <a href="play.do?contentsId=${contents.contentsId}" class="thumbnail">
+			      <img src="${contextPath}${contents.contentsSubnail}" data-src="holder.js/100%x180" alt="썸네일 1">
+			    </a>
+			  </div>
+</c:forEach>
+	   </div>
+
 
 <div class="text-center">
 	<ul class="pagination">
