@@ -65,7 +65,7 @@ public class ContentsService {
 		
 		// 원본 파일 경로 생성
 		contentsInfo.put("src_path", makeFilePath((MultipartFile)contentsInfo.get("file")));
-		
+		System.out.println(contentsInfo.get("src_path"));
 		contentsDao.createContents(contentsInfo);
 		
 	}
@@ -93,8 +93,7 @@ public class ContentsService {
 
 		  //해당 디렉토리의 존재여부를 확인
 			if(!desti.exists()){
-		  //없다면 생성
-			desti.mkdirs(); 
+				desti.mkdirs(); 
 			}
 			
 			byte fileData[] = file.getBytes();
@@ -105,8 +104,7 @@ public class ContentsService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(parentPath + file.getOriginalFilename());
-		return parentPath + file.getOriginalFilename();
+		return file.getOriginalFilename();
 	}
 	
 //	public void writeFile(MultipartFile file, String path, String fileName){
