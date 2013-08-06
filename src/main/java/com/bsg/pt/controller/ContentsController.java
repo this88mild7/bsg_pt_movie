@@ -71,6 +71,9 @@ public class ContentsController {
 			@RequestParam("item_desc")String item_desc,
 			@RequestParam("brand_nm")String brand_nm
 			) {
+		System.out.println(file.getContentType());
+		System.out.println(file.getOriginalFilename().substring(file.getOriginalFilename().length()-3));
+		System.out.println(file.getOriginalFilename().substring(0, file.getOriginalFilename().length()-4));
 		Map<String, Object> contentsInfo = new HashMap<String, Object>();
 		contentsInfo.put("file",file );
 		contentsInfo.put("item_nm",item_nm );

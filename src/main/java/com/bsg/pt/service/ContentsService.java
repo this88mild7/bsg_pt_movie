@@ -95,16 +95,17 @@ public class ContentsService {
 			if(!desti.exists()){
 				desti.mkdirs(); 
 			}
-			
+			String extenstion = file.getOriginalFilename().substring(file.getOriginalFilename().length()-3);
+			String fileName = UUID.randomUUID().toString().replace("-", "")+"."+extenstion;
 			byte fileData[] = file.getBytes();
-			FileOutputStream fos = new FileOutputStream(parentPath + file.getOriginalFilename());
+			FileOutputStream fos = new FileOutputStream(parentPath +fileName);
 			fos.write(fileData);
 			fos.close();
-			
+			return fileName;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
-		return file.getOriginalFilename();
 	}
 	
 //	public void writeFile(MultipartFile file, String path, String fileName){
