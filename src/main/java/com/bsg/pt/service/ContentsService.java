@@ -1,5 +1,6 @@
 package com.bsg.pt.service;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,56 +79,63 @@ public class ContentsService {
 		if(contentsDao.hasNotBrand(contentsInfo)){
 			contentsInfo.put("brand_id", UUID.randomUUID().toString().replace("-", ""));
 			contentsDao.createBrand(contentsInfo);
+		}else{
+			String brandId = contentsDao.brandIdByBrandNm((String)contentsInfo.get("brand_nm"));
+			contentsInfo.put("brand_id", brandId);
 		}
 	}
 	
 	private String makeFilePath(MultipartFile file) {
-		// 한글일 경우 생각 해야됨...
-		System.out.println(file.getOriginalFilename());
-		// brand 폴더 검사
-		System.out.println(file.getOriginalFilename().split(".")[1]);
-		
-		String fileName = UUID.randomUUID().toString().replace("-", "")+file.getOriginalFilename().split(".")[1];
-		
 		try {
-			byte fileData[] = file.getBytes();
-			FileOutputStream fos = new FileOutputStream(parentPath + fileName);
 			
+			//디렉토리 생성 
+			File desti = new File(parentPath);
+
+		  //해당 디렉토리의 존재여부를 확인
+			if(!desti.exists()){
+		  //없다면 생성
+			desti.mkdirs(); 
+			}
+			
+			byte fileData[] = file.getBytes();
+			FileOutputStream fos = new FileOutputStream(parentPath + file.getOriginalFilename());
 			fos.write(fileData);
+			fos.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return parentPath + fileName;
+		System.out.println(parentPath + file.getOriginalFilename());
+		return parentPath + file.getOriginalFilename();
 	}
 	
-	public void writeFile(MultipartFile file, String path, String fileName){
-		
-		FileOutputStream fos=null;
-		
-        try{
-         
-            byte fileData[] = file.getBytes();
-             
-            fos = new FileOutputStream(path + "\\" + fileName);
-             
-            fos.write(fileData);
-         
-        }catch(Exception e){
-             
-            e.printStackTrace();
-             
-        }finally{
-             
-            if(fos != null){
-                 
-                try{
-                    fos.close();
-                }catch(Exception e){}
-                 
-                }
-        }// try end;
-         
-    }// wirteFile() end;
+//	public void writeFile(MultipartFile file, String path, String fileName){
+//		
+//		FileOutputStream fos=null;
+//		
+//        try{
+//         
+//            byte fileData[] = file.getBytes();
+//             
+//            fos = new FileOutputStream(path + fileName);
+//             
+//            fos.write(fileData);
+//         
+//        }catch(Exception e){
+//             
+//            e.printStackTrace();
+//             
+//        }finally{
+//             
+//            if(fos != null){
+//                 
+//                try{
+//                    fos.close();
+//                }catch(Exception e){}
+//                 
+//                }
+//        }// try end;
+//         
+//    }// wirteFile() end;
 
 }
