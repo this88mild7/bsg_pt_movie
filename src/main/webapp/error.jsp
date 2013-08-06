@@ -17,7 +17,7 @@ img {
 	<div>
 		<img alt="현재 이미지를 불러올수 없습니다." src="img/404.jpg">
 		<p>
-			<a href="javascript:history.back(-1);">뒤로</a> 혹은 <a href="/lucky">첫 화면</a>으로 이동할 수 있습니다.
+			<a href="javascript:history.back(-1);">뒤로</a> 혹은 <a href="/lucky">첫 화면</a>으로 이동할 수 있습니다. 
 		</p>
 	</div>
 </body>
