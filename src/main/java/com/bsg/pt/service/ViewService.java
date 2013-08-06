@@ -16,9 +16,5 @@ public class ViewService {
 	@Autowired
 	ViewDao viewDao;
 	
-	public List<Map<String, Object>> cateList(){
-		return viewDao.cateList();
-	}
-
 
 }

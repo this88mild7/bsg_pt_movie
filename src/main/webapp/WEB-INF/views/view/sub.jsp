@@ -12,8 +12,8 @@
 	 <div class="row">
 <c:forEach items="${contensList}" var="contents">
 			  <div class="col-lg-4">
-			    <a href="play.do?contentsId=${contents.contentsId}" class="thumbnail">
-			      <img src="${contextPath}${contents.contentsSubnail}" data-src="holder.js/100%x180" alt="썸네일 1">
+			    <a href="play.do?itemId=${contents.ITEM_ID}" class="thumbnail">
+			      <img src="" data-src="holder.js/100%x180" alt="${contents.ITEM_NM}">
 			    </a>
 			  </div>
 </c:forEach>

@@ -26,8 +26,7 @@ public class ViewController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ViewController.class);
 	
-	@Autowired
-	private ViewService viewService;
+	private String movieSrc = "/storyfarm/source/ani_song07.mp4";
 	
 	@Autowired
 	private ContentsService contentsService;
@@ -39,8 +38,8 @@ public class ViewController {
 		}
 		boolean isLogin  = (Boolean)request.getSession().getAttribute("isLogin");
 		if(isLogin)	{
-			List<Map<String, Object>> cateList = viewService.cateList();
-			model.addAttribute("cateList", cateList);
+			List<Map<String, Object>> brandList = contentsService.brandList();
+			model.addAttribute("brandList", brandList);
 			return "sidebar-view/main";
 		}else{
 			return "redirect:loginView.do";
@@ -48,12 +47,24 @@ public class ViewController {
 	}
 	
 	@RequestMapping(value = "/sub.do")
-	public String flowerplay(Model model, String cateId) {
-		List<Map<String, Object>> cateList = viewService.cateList();
-		List<Map<String, Object>> contentsList = contentsService.listByCateId(cateId);
-		model.addAttribute("cateList", cateList);
+	public String flowerplay(Model model, String brandId) {
+		List<Map<String, Object>> brandList = contentsService.brandList();
+		List<Map<String, Object>> contentsList = contentsService.listBybrandId(brandId);
+		model.addAttribute("brandList", brandList);
 		model.addAttribute("contensList", contentsList);
 		return "sidebar-view/sub";
+	}
+	@RequestMapping(value = "/player.do")
+	public String player(Model model) {
+		model.addAttribute("contenstSrc", movieSrc);
+		return "player-sidebar-view/flowplayer";
+	}
+	
+	@RequestMapping(value = "/uploadView.do")
+	public String uploadView(Model model) {
+		List<Map<String, Object>> brandList = contentsService.brandList();
+		model.addAttribute("brandList", brandList);
+		return "sidebar-view/upload";
 	}
 	
 }

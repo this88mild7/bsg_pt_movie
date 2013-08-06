@@ -4,6 +4,6 @@
     
 
 <div class="well">카테고리 영역</div>
-<c:forEach var="category" items="${cateList}">
-<div class="well"><a href="${contextPath}/sub.do?cateId=${category.cateId}">${category.cateName}</a></div>
+<c:forEach var="brand" items="${brandList}">
+<div class="well"><a href="${contextPath}/sub.do?brandId=${brand.BRAND_ID}">${brand.BRAND_NM}</a></div>
 </c:forEach>

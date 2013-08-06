@@ -11,7 +11,8 @@
 	  <ul class="nav navbar-nav">
 	    <li><a href="${contextPath}/main.do">메인</a></li>
 	    <li><a href="${contextPath}/sub.do">서브</a></li>
-	    <li><a href="${contextPath}/flowplayer.do">플레이어</a></li>
+	    <li><a href="${contextPath}/player.do">플레이어</a></li>
+	    <li><a href="${contextPath}/uploadView.do">업로드</a></li>
 	  </ul>
 	  <ul class="nav navbar-nav pull-right">
 	    <li><a href="${contextPath}/login.do">로그인/로그아웃</a></li>
