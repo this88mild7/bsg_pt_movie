@@ -2,11 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<link rel="stylesheet" href="css/bootstrap-fileupload.min.css">
-
-<script src="js/bootstrap-fileupload.min.js"></script>
-
-<form class="form-horizontal" action="${contextPath}/upload.do" method="POST" enctype="multipart/form-data">
+<form id="upload" class="form-horizontal" action="${contextPath}/upload.do" method="POST" enctype="multipart/form-data">
 <fieldset>
 	  <div class="form-group">
 	  	
@@ -46,4 +42,34 @@
 	    </div>
 	</fieldset>
 </form>
+
+<script>
+$(function(){
+		alert("test");
+		$("#upload").submit( function(submitEvent) {
+	        var filename = $("#item_file").val();
+
+	        var extension = filename.replace(/^.*\./, '');
+
+	        if (extension == filename) {
+	            extension = '';
+	        } else {
+	            extension = extension.toLowerCase();
+	        }
+	        switch (extension) {
+	            case 'mp4':
+	            	return;
+	            case 'flv':
+	            	return;
+	            default:
+	                alert("mp4 와 flv 만 업로드 가능 합니다.)");
+	                submitEvent.preventDefault();
+	        }
+
+	  });
+		
+		
+	});
+	
+</script>
 
