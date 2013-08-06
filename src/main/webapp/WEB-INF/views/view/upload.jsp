@@ -9,10 +9,15 @@
 <form class="form-horizontal" action="${contextPath}/upload.do" method="POST" enctype="multipart/form-data">
 <fieldset>
 	  <div class="form-group">
+	  	
 	    <label for="brand_nm" class="col-lg-3 control-label">브랜드 이름</label>
 	    <div class="col-lg-6">
-	      <input type="text" class="brand_nm" id="brand_nm" name="brand_nm" placeholder="브랜드 이름">
-	    </div>
+						<select size="1" name="brand_nm">
+							<c:forEach items="${ brandList }" var="brand">
+								<option value="${ brand.BRAND_NM }" >${ brand.BRAND_NM }</option>
+							</c:forEach>
+						</select>
+				</div>
 	  </div>
 	  <div class="form-group">
 	    <label for="item_nm" class="col-lg-3 control-label">콘텐츠 명</label>
@@ -23,7 +28,7 @@
 	  <div class="form-group">
 	    <label for="item_desc" class="col-lg-3 control-label">콘텐츠 설명</label>
 	    <div class="col-lg-6">
-	      <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="비밀번호">
+	      <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="콘텐츠 설명">
 	    </div>
 	  </div>
 	  <div class="form-group">

@@ -43,11 +43,12 @@ public class ContentsDao extends SqlSessionDaoSupport{
 	}
 
 	public boolean hasNotBrand(Map<String, Object> contentsInfo) {
-		int brandCheckCount = (Integer)getSqlSession().selectOne("contents.brandCheckCount");
+		System.out.println(contentsInfo.get("brand_nm"));
+		int brandCheckCount = (Integer)getSqlSession().selectOne("contents.brandCheckCount", contentsInfo);
 		if(brandCheckCount > 0){
-			return true;
-		}else{
 			return false;
+		}else{
+			return true;
 		}
 	}
 

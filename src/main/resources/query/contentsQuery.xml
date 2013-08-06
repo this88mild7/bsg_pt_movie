@@ -15,9 +15,9 @@
        SELECT * FROM BG_ITEMT
        WHERE ITEM_ID = #{itemId}
    </select>
-  <select id="brandCheckCount" resultType="java.util.Map">
+  <select id="brandCheckCount" parameterType="java.util.Map" resultType="int">
        SELECT COUNT(*) FROM BG_BRAND
-       WHERE BRAND_NM like '%'#{brand_nm}'%'
+       WHERE BRAND_NM like '%${brand_nm}%'
    </select>
    
    <insert id="createContents">
@@ -28,10 +28,10 @@
 			SRC_PATH   		
    		)
    		VALUES(
-   			#{item_id},
-   			#{item_nm},
-   			#{brand_id},
-   			#{src_path}
+   			${item_id},
+   			${item_nm},
+   			${brand_id},
+   			${src_path}
    		)
    </insert>
    

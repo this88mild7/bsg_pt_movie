@@ -23,6 +23,7 @@ public class ContentsService {
 	private final String parentPath = "/var/lib/tomcat6/webapps/storyfarm/source/";
 	
 	
+	
 	/**
 	 * 브랜드 리스트
 	 * @return
@@ -82,13 +83,22 @@ public class ContentsService {
 	
 	private String makeFilePath(MultipartFile file) {
 		// 한글일 경우 생각 해야됨...
-		
+		System.out.println(file.getOriginalFilename());
 		// brand 폴더 검사
+		System.out.println(file.getOriginalFilename().split(".")[1]);
 		
-		// file make
+		String fileName = UUID.randomUUID().toString().replace("-", "")+file.getOriginalFilename().split(".")[1];
 		
-		
-		return null;
+		try {
+			byte fileData[] = file.getBytes();
+			FileOutputStream fos = new FileOutputStream(parentPath + fileName);
+			
+			fos.write(fileData);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return parentPath + fileName;
 	}
 	
 	public void writeFile(MultipartFile file, String path, String fileName){
